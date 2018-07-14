@@ -7,8 +7,8 @@ var extraCounts = 0;
 function displayExtraGifs(){
 
     extraCounts = extraCounts + 10;
-    var disGif = $(this).attr("data-name");
-    var queryURL = 'https://api.giphy.com/v1/gifs/search?q=soccer+' + disGif +  '&api_key=tJbS1XHGNapeI741lrud2BENgDuM7E76&limit=' + (10 + extraCounts) + '"';
+    var Gif = $(this).attr("data-name");
+    var queryURL = 'https://api.giphy.com/v1/gifs/search?q=soccer+' + Gif +  '&api_key=tJbS1XHGNapeI741lrud2BENgDuM7E76&limit=' + (10 + extraCounts) + '"';
     $.get(queryURL).then(function(parameter){
         var figureHold = "";
 
@@ -40,8 +40,8 @@ function displayGifs(){
     $("#add-more").empty();
     gifAnimations = [];
     gifStills = [];
-    var daGif = $(this).attr("data-name");
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=soccer+" + daGif +  "&api_key=tJbS1XHGNapeI741lrud2BENgDuM7E76&limit=10";
+    var aGif = $(this).attr("data-name");
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=soccer+" + aGif +  "&api_key=tJbS1XHGNapeI741lrud2BENgDuM7E76&limit=10";
 
     $.get(queryURL).then(function(parameter){
 
@@ -59,7 +59,7 @@ function displayGifs(){
             figureHold = null;
         }
 
-        $("#add-more").append('<button type="button" class="btn btn-primary my-2" data-name=' + daGif + ' id="more-GIFs">See more GIFS</button>');
+        $("#add-more").append('<button type="button" class="btn btn-primary my-2" data-name=' + aGif + ' id="more-GIFs">See more GIFS</button>');
 
 
     });
